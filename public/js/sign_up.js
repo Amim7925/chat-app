@@ -24,7 +24,7 @@ function submit_user(){
         if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200){
             console.log("ajax connection successful");
             var result = xhr.response;
-
+            console.log(result);
         }else{
             console.log("ajax connection failed");
         }
@@ -33,11 +33,10 @@ function submit_user(){
     xhr.send(formData);
 }
 
-button.addEventListener("click" , function (event) {
-    event.preventDefault();
-    submit_user();
-})
-
+button.addEventListener("click", function (event) {
+  event.preventDefault();
+  submit_user();
+});
 
 
 // add validation to forms

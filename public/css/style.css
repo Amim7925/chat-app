@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,600;1,900&display=swap');
 
+/*------------------------- color codes --------------------------------- */
+/* button : #3f88d6 */
+
+
+
+
 *{
     padding: 0;
     margin: 0;
@@ -13,7 +19,7 @@ body{
 /* ---------------------------- sign up login form style ---------------------------- */
 .main{
     height: 100vh;
-    background-image: url('../images/social-media5.jpg');
+    /* background-image: url('../images/social-media5.jpg'); */
     background-color: #b1b1b1;
 }
 
@@ -21,7 +27,7 @@ body{
     padding: 20px 30px;
     border-radius: 7px;
     width: 350px;
-    height: 300px;
+    /* height: 300px; */
     background-color: rgb(253 253 253);
     /* color: #fff; */
     position: absolute;
@@ -29,7 +35,7 @@ body{
     left: 50%;
     transform: translate(-50% , -50%);
     box-shadow: 1px 4px 15px 4px rgba(0,0,0,0.6);
-
+    position: relative;
 }
 .login-form form button{
   width: 100%;
@@ -40,8 +46,8 @@ body{
     margin-bottom: 15px;
     
 }
-.login-form form span a{
-    font-weight: bold;
+.login-form span a{
+    font-weight: 500;
 }
 .form-title{
     border-bottom: 1px solid #dadada;
@@ -53,4 +59,24 @@ body{
 
 .input-group-text{
     background-color: #a6d1ffd1 !important;
+}
+.btn-primary{
+    background-color: #3f88d6 !important;
+}
+
+#input-image{
+    padding-bottom: 30px !important;
+}
+.fa-eye{
+    position: absolute;
+    top:60%;
+    right: 5%;
+    color: #dadada;
+    cursor: pointer;
+}
+.fa-eye.active{
+    color: rgb(72 72 72);
+}
+.login-eye{
+    transform: translateY(-60%);
 }
