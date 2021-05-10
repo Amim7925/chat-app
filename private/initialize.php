@@ -6,8 +6,9 @@ require_once('classes/database.class.php');
 //$random_id = rand(time() , 100000000);
 
 
-
-$database = new Database();
 $connection = db_connect();
+
+//$database = new Database($connection);
+Database::set_data($connection);
 
 ?>

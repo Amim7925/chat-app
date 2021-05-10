@@ -15,7 +15,7 @@
     
    require_once("../private/initialize.php");
     
-    $result = $database->findall();
+    $result = Database::findall();
     foreach ($result as $args) {
         echo $args['userName'];
     }
