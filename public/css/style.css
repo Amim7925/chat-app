@@ -136,7 +136,7 @@ p {
 }
 
 .user:hover {
-    background-color: #efefef;
+    background-color: #e6e6e6;
     color: #000;
 }
 
@@ -175,14 +175,12 @@ p {
 .main-section {
     background-image: url('../images/social-media5.jpg');
     object-fit: cover;
-    background: #efefef;
     height: 100%;
     width: 100%;
     position: relative;
 }
 
 .chat-wrapper {
-    background: #efefef;
     height: 100%;
 }
 
