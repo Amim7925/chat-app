@@ -1,203 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
     <title>Chat App</title>
-</head>
-<body>
-   <div class="main-section">
-   <div class="row header">
-        <i class="fa fa-bars"></i>
-    </div>
-    <div class="row user-aside">
-        <div class="col-2 user-list">
-            <div class="search">
-                <input type="search" placeholder="Search..." name="" id="search-bar">
-                <button id="btn-search"><i class="fa fa-search"></i></button>
+  </head>
+  <body>
+    <div class="main-section">
+      <div class="menu">
+        <div class="menu-content">
+            <i class="fa fa-times close-menu"></i>
+            <div class="logged-user">
+                <img src="../images/person2.jpg" alt="" />
+                <div class="user-details">
+                  <h6>Admin</h6>
+                  <h6>Alireza Yarii</h6>
+                </div>
+                <a href="" class="btn-logOut">Log out</a>
             </div>
-            <a class="user">
-                <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="">
-                <i class="fa fa-circle"></i>
-                <div class="user-details">
-                    <h6>Admin</h6>
-                    <p>this is a test message</p>
-                </div>
-            </a>
-            <a class="user">
-                <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="">
-                <i class="fa fa-circle"></i>
-                <div class="user-details">
-                    <h6>Admin</h6>
-                    <p>this is a test message</p>
-                </div>
-            </a>
-            <a class="user">
-                <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="">
-                <i class="fa fa-circle"></i>
-                <div class="user-details">
-                    <h6>Admin</h6>
-                    <p>this is a test message</p>
-                </div>
-            </a>
+        </div>
+      </div>
+      <div class="row header">
+        <i class="fa fa-bars"></i>
+      </div>
+      <div class="row user-aside">
+        <div class="col-2 user-list">
+          <div class="search">
+            <input
+              type="search"
+              placeholder="Search..."
+              name=""
+              id="search-bar"
+            />
+            <button id="btn-search"><i class="fa fa-search"></i></button>
+          </div>
+          <a class="user">
+            <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="" />
+            <i class="fa fa-circle"></i>
+            <div class="user-details">
+              <h6>Admin</h6>
+              <p>this is a test message</p>
+            </div>
+          </a>
+          <a class="user">
+            <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="" />
+            <i class="fa fa-circle"></i>
+            <div class="user-details">
+              <h6>Admin</h6>
+              <p>this is a test message</p>
+            </div>
+          </a>
+          <a class="user">
+            <img class="user-img" src="../images/BduTxWnIUAAKT_5.jpg" alt="" />
+            <i class="fa fa-circle"></i>
+            <div class="user-details">
+              <h6>Admin</h6>
+              <p>this is a test message</p>
+            </div>
+          </a>
         </div>
         <div class="chat-wrapper col-10">
-            <div class="chat-area">
-                <section class="chat-box">
-                    <header>
-                        <div class="content">
-                            <a class="back-arrow" href=""><i class="fa fa-arrow-left"></i></a>
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="detail">
-                                <span>Aras J</span>
-                                <p>active Now</p>
-                            </div>
-                        </div>
-                    </header>
-                    <div class="chat-details">
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>   <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>   <div class="chat outgoing-chat">
-                            <img src="../images/person3.jpg" alt="">
-                            <div class="details">
-                                <p>Hi this is admin J how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                        </div>
-                        <div class="chat incomming-chat">
-                            <div class="details">
-                                <p>Hi this is Aras admin how are you today sir?
-                                    this is a test text this is a test text
-                                </p>
-                            </div>
-                            <img src="../images/person2.jpg" alt="">
-                        </div>
-                        
-                    </div>
-                    <form action="" class="input-area">
-                        <input type="text" placeholder="type something to chat...">
-                        <button type="submit"><i class="fa fa-telegram"></i></button>
-                    </form>
-                </section>
-            </div>
-
+          <div class="chat-area">
+            <section class="chat-box">
+              <header>
+                <div class="content">
+                  <a class="back-arrow" href=""
+                    ><i class="fa fa-arrow-left"></i
+                  ></a>
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="detail">
+                    <span>Aras J</span>
+                    <p>active Now</p>
+                  </div>
+                </div>
+              </header>
+              <div class="chat-details">
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+                <div class="chat outgoing-chat">
+                  <img src="../images/person3.jpg" alt="" />
+                  <div class="details">
+                    <p>
+                      Hi this is admin J how are you today sir? this is a test
+                      text this is a test text
+                    </p>
+                  </div>
+                </div>
+                <div class="chat incomming-chat">
+                  <div class="details">
+                    <p>
+                      Hi this is Aras admin how are you today sir? this is a
+                      test text this is a test text
+                    </p>
+                  </div>
+                  <img src="../images/person2.jpg" alt="" />
+                </div>
+              </div>
+              <form action="" class="input-area">
+                <input type="text" placeholder="type something to chat..." />
+                <button type="submit"><i class="fa fa-telegram"></i></button>
+              </form>
+            </section>
+          </div>
         </div>
-        
+      </div>
     </div>
-   </div>
-</body>
+    <script src="../js/users.js"></script>
+  </body>
 </html>
