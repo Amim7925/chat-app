@@ -2,56 +2,56 @@
 
 class Database{
 
-    protected $classname = 'user';
+    static protected $classname;
     static protected $database;
-
-
-
+    static protected $all_items;
+    
 
     static public function set_data($theconnection){
         self::$database = $theconnection;
     }
 
 
-    static public function insert_data($arg){
+    protected function insert_data($values){
 
-        $sql = "INSERT INTO" . $classname . "("; 
-        $sql .= join($all_items,',') . ") VALUES ('" . join($arg ,"' ,'" );
+        $sql = "INSERT INTO " . static::$classname . " ( "; 
+        $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join($values ,"' ,'" );
         $sql .= "' );";
-        $result = self::$database->query($sql);
+        $result = static::$database->query($sql);
+        if(isset($result)) return "OK"; 
     }
-    
-    static public function findall(){
-        $sql = 'SELECT * FROM user';
 
-        return self::$database->query($sql);
+    static public function findall(){
+        $sql = 'SELECT * FROM '. static::$classname;
+
+        return static::$database->query($sql);
         
     }
 
 
     static public function find_by_id($id){
-        $sql = "SELECT * FROM ". $classname ."WHERE id ='" .$id ."'" ;
-        $sql .= "LIMIT '1'";
-        return self::$database->query($sql);
-    
+        $sql = "SELECT * FROM ".   static::$classname ." WHERE id = '" .$id ."';" ;
+        //$sql .= "LIMIT '1'";
+        return static::$database->query($sql);
+        
     }
 
     //not yet complete
     static public function update($id){
-        $sql = "UPDATE " . $classname . "SET "; 
+        $sql = "UPDATE " .  static::$classname . "SET "; 
         $sql .= join($all_items,',') . ") VALUES ('" . join($arg ,"' ,'" );
         $sql .= "' );";
         //$result = self::$database->query($sql);
         return 'not complete';
     }
-    //UPDATE table_name
-    //SET column1=value, column2=value2,...
-    //WHERE some_column=some_value
-    static public function delete($id){
-        $sql = " DELETE FROM ". $classname ."WHERE id ='" .$id ."'" ;
-        $sql .= "LIMIT '1'";
-        return self::$database->query($sql);
     
+
+    
+    static public function delete($id){
+        $sql = " DELETE FROM ".  static::$classname ." WHERE id = " .$id .";" ;
+        //$sql .= "LIMIT = 1 ;";
+        $result = static::$database->query($sql);
+        //if(isset($result)) return $sql;
     }
 
     
