@@ -71,7 +71,9 @@ public function create(){
   $unique_id = $this->create_unique_id();
   $password = $this->hash_password($this->password);
   $data= [$this->nameAndFamily ,$this->userName ,$password ,$this->email , $this->image , $unique_id ];
-  $this->insert_data($data);
+  if($this->insert_data($data)){
+    return true;
+  }
   
 }
 

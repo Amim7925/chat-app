@@ -31,7 +31,7 @@ if(!is_ajax_request()){
    $user->password = $_POST['password'];
    $user->email = $_POST['email'];
    $user->image = $_POST['image'];
-   if($user->create()=="OK"){
+   if($user->create()){
      echo true;
    }
    else {

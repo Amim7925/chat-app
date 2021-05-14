@@ -18,7 +18,7 @@ class Database{
         $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join(escape_string($values) ,"' ,'" );
         $sql .= "' );";
         $result = static::$database->query($sql);
-        if(isset($result)) return "OK"; 
+        if(isset($result)) return true; 
     }
 
     static public function findall(){
