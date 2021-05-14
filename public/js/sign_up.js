@@ -34,7 +34,7 @@ function submit_user(){
 }
 
 button.addEventListener("click", function (event) {
-  event.preventDefault();
+  // event.preventDefault();
   submit_user();
 });
 
