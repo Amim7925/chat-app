@@ -16,15 +16,10 @@
     require_once("../private/initialize.php");
 
     //..//$random_id = User::create_unique_id();
+    $id ='10';
+    $user = User::find_by_id($id);
 
-    $user = new User();
-
-    $user->nameAndFamily ='alireza';
-    $user->userName = "alz";
-    $user->password = '1111';
-    $user->email ="alrz@gml.com2";
-    $user->image ='';
-    $user->create();
+    print_r($user);
  
 
 

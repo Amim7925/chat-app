@@ -15,7 +15,7 @@ class Database{
     protected function insert_data($values){
 
         $sql = "INSERT INTO " . static::$classname . " ( "; 
-        $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join($values ,"' ,'" );
+        $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join(escape_string($values) ,"' ,'" );
         $sql .= "' );";
         $result = static::$database->query($sql);
         if(isset($result)) return "OK"; 
@@ -30,12 +30,14 @@ class Database{
 
 
     static public function find_by_id($id){
-        $sql = "SELECT * FROM ".   static::$classname ." WHERE id = '" .$id ."';" ;
+        $sql = "SELECT * FROM ".   static::$classname ." WHERE id = '" .self::$database->escape_string($id) ."';" ;
         //$sql .= "LIMIT '1'";
-        return static::$database->query($sql);
+        $object_array= static::$database->query($sql);
+        $record = $object_array->fetch_assoc();
+        return $record;
         
     }
-
+    
     //not yet complete
     static public function update($id){
         $sql = "UPDATE " .  static::$classname . "SET "; 
@@ -48,7 +50,7 @@ class Database{
 
     
     static public function delete($id){
-        $sql = " DELETE FROM ".  static::$classname ." WHERE id = " .$id .";" ;
+        $sql = " DELETE FROM ".  static::$classname ." WHERE id = " .escape_string($id) .";" ;
         //$sql .= "LIMIT = 1 ;";
         $result = static::$database->query($sql);
         //if(isset($result)) return $sql;
