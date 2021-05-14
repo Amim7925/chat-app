@@ -17,22 +17,61 @@
 
     //..//$random_id = User::create_unique_id();
 
-    $result = Chat::findall();
+    $user = new User();
+
+    $user->nameAndFamily ='alireza';
+    $user->userName = "alz";
+    $user->password = '1111';
+    $user->email ="alrz@gml.com2";
+    $user->image ='';
+    $user->create();
+ 
+
+
+
+ /*
+    $username = 'mdm2';
     
-
-
-
-
     
+  $user =  User::find_by_username2($username);
+  //echo $user->fetch_assoc();
+  if($user == false){
+   echo "false" ;
+}
+  if($user){
+    print_r($user);
+    $result = $session->login($user);
+
+    if($result) echo "http://localhost/DBTest3/chat-app/private/ajax-response/loginresponse.php?username=". $session->username;
+  }
+  else {
+      echo "Fuck";
+  }
+  
+
+
+  
+     /*
+
+
+
+
+
     //$all_items=['alireza2','alzr2',User::hash_password('123'),'alrz2@gmail.com' ,'', $random_id  ];
    // $result = chat::delete(2);
-   
+  
 
   // $result = User::create($all_items);
 
 
-    /*
+   
 
+
+
+
+
+
+ $obj_array->fetch_assoc()
     $user = new User();
 
    $user->nameAndFamily ='MAMMAD2';

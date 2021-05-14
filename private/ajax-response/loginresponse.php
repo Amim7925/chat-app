@@ -19,6 +19,6 @@ if(!is_ajax_request()){exit;}
 
   echo $username . "$$$$$" . $password;
   
-  
 
+  
 ?>

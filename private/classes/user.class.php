@@ -34,12 +34,25 @@ public function check_password($saved_password , $password){
   }
 }
 
-public function find_by_username($username){
+static public function find_by_username($username){
 
   $sql = "SELECT * FROM user WHERE userName = '" .$username ."';" ;
-
-  return static::$database->query($sql);
+  $obj_array =static::$database->query($sql);
+ 
+  if(empty($obj_array))return false;
+  else {
+    return static::put_in_array($obj_array);
+  }
 }
+
+static public function find_by_username2($username){
+
+  $sql = "SELECT * FROM user WHERE userName = '" .$username ."';" ;
+  $object_array= static::$database->query($sql);
+  $record = $object_array->fetch_assoc();
+   return $record;
+}
+
 
 public function create_unique_id(){
 
@@ -54,23 +67,13 @@ public function hash_password($password){
 }
 
 
-
-
 public function create($arg=[]){
   $unique_id = $this->create_unique_id();
   $password = $this->hash_password($this->password);
   $data= [$this->nameAndFamily ,$this->userName ,$password ,$this->email , $this->image , $unique_id ];
   $this->insert_data($data);
- 
+  
 }
-
-
-
-
-
-
-
-
 
 
 }

@@ -56,6 +56,26 @@ class Database{
 
     
 
+    static protected function instantiate($item){
+        $object = new static;
+        
+        foreach ($item as $key => $value) {
+            if(property_exists($object,$key)) $object->key = $value;
+        }   
+        return $object;
+
+
+    }
+
+    static protected function put_in_array($object){
+        $array=[];
+        while($record = $object->fetch_assoc()){
+            $array[] = static::instantiate($record);
+        }
+        return $array;
+    }
+
+    
 
 
 
