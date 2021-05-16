@@ -15,7 +15,7 @@ class Database{
     protected function insert_data($values){
 
         $sql = "INSERT INTO " . static::$classname . " ( "; 
-        $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join(escape_string($values) ,"' ,'" );
+        $sql .= join(static::$all_items,' , ') . " ) VALUES ('" . join($values ,"' ,'" );
         $sql .= "' );";
         $result = static::$database->query($sql);
         if(isset($result)) return true; 
@@ -25,7 +25,7 @@ class Database{
         $sql = 'SELECT * FROM '. static::$classname;
 
         return static::$database->query($sql);
-        
+            
     }
 
 
@@ -38,19 +38,35 @@ class Database{
         
     }
     
-    //not yet complete
-    static public function update($id){
-        $sql = "UPDATE " .  static::$classname . "SET "; 
-        $sql .= join($all_items,',') . ") VALUES ('" . join($arg ,"' ,'" );
-        $sql .= "' );";
-        //$result = self::$database->query($sql);
-        return 'not complete';
+    
+    public function update($unique_id){
+        $sql = "UPDATE " .  static::$classname . " SET "; 
+        $sql .= $this->set_data_in_array();
+        $sql .= " WHERE unique_id = " . $unique_id .";";
+        $result = self::$database->query($sql);
+        if($result) return true;
+        else return false;
     }
     
+    protected function set_data_in_array(){
+        $object_array=[];
+        foreach (static::$all_items as  $value) {
+            if($value == 'password') $this->$value = $this->hash_password($this->$value);
+            $object_array[$value] = $this->$value;
+        }
+        $string = '';
+        $r=[];
+        foreach ($object_array as $key => $value) {
+            $r[] =  $key . " = ' " . $value . " ' ";
+        }
+        $string .= join($r , ', ');
+        return $string;
+    
+    }
 
     
     static public function delete($id){
-        $sql = " DELETE FROM ".  static::$classname ." WHERE id = " .escape_string($id) .";" ;
+        $sql = " DELETE FROM ".  static::$classname ." WHERE id = " .self::$database->escape_string($id) .";" ;
         //$sql .= "LIMIT = 1 ;";
         $result = static::$database->query($sql);
         //if(isset($result)) return $sql;
@@ -61,7 +77,7 @@ class Database{
     static protected function instantiate($item){
         $object = new static;
         
-        foreach ($item as $key => $value) {
+        foreach (self::$database->escape_string($item) as $key => $value) {
             if(property_exists($object,$key)) $object->key = $value;
         }   
         return $object;
@@ -69,8 +85,15 @@ class Database{
 
     }
 
-    static protected function put_in_array($object){
+    protected function hash_password($password){
+
+        return password_hash( $password, PASSWORD_BCRYPT);
+      
+    }
+
+    static protected function put_in_array($object_item){
         $array=[];
+        $object = self::$database->escape_string($object_item);
         while($record = $object->fetch_assoc()){
             $array[] = static::instantiate($record);
         }

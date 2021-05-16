@@ -15,18 +15,29 @@
     
     require_once("../private/initialize.php");
 
-    //..//$random_id = User::create_unique_id();
-    $id ='10';
-    $user = User::find_by_id($id);
-
-    print_r($user);
- 
-
+  
+   
+       //if(property_exists($object_array , $all_items)) $object_array->$key = $value;
+  
+        $username = 'king';
+   
+       $user =  User::find_by_username($username);
+       //echo $user->fetch_assoc();
+       echo  $user['image'];
+  
+        echo '<img src='.$user['image'] .' alt="Smiley face" height="42" width="42">
+        '
+    
+    
 
 
  /*
     $username = 'mdm2';
-    
+    $user = User::findall();
+    foreach ($user as $args) {
+        echo $args['email'];
+        echo "</br>";
+    }
     
   $user =  User::find_by_username2($username);
   //echo $user->fetch_assoc();

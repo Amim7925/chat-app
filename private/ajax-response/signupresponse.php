@@ -14,14 +14,29 @@ if(!is_ajax_request()){
 
   
   if(!isset($_POST['username'])) {
-    echo "username not found!";
+    echo "username not set!";
     return false;
   }
   if(!isset($_POST['password'])) {
-    echo "password not found!";
+    echo "password not set!";
     return false;
   }
-
+  if(!isset($_POST['email'])) {
+    echo "email not set!";
+    return false;
+  }
+  if(!isset($_POST['image'])) {
+    echo "image not set!";
+    return false;
+  }
+  if(!isset($_POST['fname'])) {
+    echo "fname not set!";
+    return false;
+  }
+  if(!isset($_POST['lname'])) {
+    echo "lname not set!";
+    return false;
+  }
  
 
    $user = new User();
